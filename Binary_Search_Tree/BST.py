@@ -94,7 +94,7 @@ class BinarySearchTree:
                     next_level.append(node.right)
             max_height += 1
             num = next_level
-        return max_height - 1 
+        return max_height
     
 
     def count_leaves(self) -> int:
@@ -137,16 +137,9 @@ class BinarySearchTree:
             self.root = None
             return
         values = tree.split(',')
-        self.root = self._recursive_deserialize(values)
 
-    def _recursive_deserialize(self, values) -> Node:
-        if not values:
-            return None
-        value = values.pop(0)
-        node = Node(int(value))
-        node.left = self._recursive_deserialize(values)
-        node.right = self._recursive_deserialize(values)
-        return node
+
+
 
 
 def main():
