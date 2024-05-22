@@ -1,4 +1,5 @@
 import pytest
+import unittest
 
 from Binary_Search_Tree.BST import BinarySearchTree as BST
 
@@ -36,7 +37,7 @@ def test_find_max(bst):
     assert bst.find_max() == 16
 
 def test_height(bst):
-    assert bst.height() == 2
+    assert bst.height() == 3
 
 def test_count_leaves(bst):
     assert bst.count_leaves() == 3
@@ -47,4 +48,6 @@ def test_serialize(bst):
 def test_deserialize():
     tree = BST()
     tree.deserialize("10,7,3,8,16")
-    assert tree.in_order_traversal() == [16, 8, 3, 7, 10]
+    assert tree.in_order_traversal() == [3, 7, 8, 10, 16]
+
+

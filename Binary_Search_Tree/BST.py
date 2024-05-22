@@ -137,9 +137,10 @@ class BinarySearchTree:
             self.root = None
             return
         values = tree.split(',')
-
-
-
+        new_value = map(int, values)
+        for v in new_value:
+            self.insert(v)
+        
 
 
 def main():
