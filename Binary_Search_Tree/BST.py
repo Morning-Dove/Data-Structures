@@ -8,9 +8,11 @@ class Node:
 
 class BinarySearchTree:
     
+
     def __init__(self):
         self.root: Node = None
         self.size = 0
+
 
     def insert(self, value: int) -> None:
         '''Inserts a number into the tree'''
@@ -18,6 +20,7 @@ class BinarySearchTree:
             self.root = Node(value)
         else:
             self._insert_recursive(self.root, value)
+
 
     def _insert_recursive(self, node: Node, value: int) -> None:
         if value < node.value:
@@ -70,6 +73,7 @@ class BinarySearchTree:
             min = min.left
         return min.value
 
+
     def find_max(self) -> int:
         '''returns the largest number in the tree 
         (you cannot turn the tree into a list then return an element from the list, 
@@ -115,6 +119,7 @@ class BinarySearchTree:
             num = next_level
         return leaf_count
 
+
     def serialize(self) -> str:
         '''turn the BST into a string'''
         result = []
@@ -141,7 +146,6 @@ class BinarySearchTree:
         for v in new_value:
             self.insert(v)
         
-
 
 def main():
     bst = BinarySearchTree()
@@ -184,6 +188,7 @@ def main():
     print("*** DESERIALIZE ***")
     tree = "10,7,3,8,16"
     print(bst.deserialize(tree))
+
 
 if __name__ == "__main__":
     main()
